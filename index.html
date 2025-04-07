@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your To-Do List</h1>
+        
+        <!-- Form for adding list name, number of tasks, and task inputs -->
+        <div class="input-section">
+            <label for="list-name">List Name:</label>
+            <input type="text" id="list-name" placeholder="Enter list name" required>
+            
+            <label for="num-tasks">Number of Tasks:</label>
+            <input type="number" id="num-tasks" min="1" placeholder="Enter number of tasks" required>
+            
+            <button id="generate-tasks" onclick="generateTaskInputs()">Generate Tasks</button>
+        </div>
+
+        <!-- Dynamic task input fields will appear here -->
+        <div id="task-inputs"></div>
+
+        <button id="create-list" onclick="createList()">Create List</button>
+
+        <!-- Button to view the list -->
+        <button id="view-list-btn" onclick="viewList()" style="display:none;">View List</button>
+
+        <!-- Display the created list here -->
+        <div id="todo-list" style="display:none;">
+            <h2 id="todo-list-name"></h2>
+            <ul id="task-list"></ul>
+        </div>
+    </div>
+
+    <!-- Hidden section to show the list in a separate page layout (optional) -->
+    <div id="list-page" style="display:none;">
+        <h2>Your To-Do List</h2>
+        <div id="todo-list-content"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
